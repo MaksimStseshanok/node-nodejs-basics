@@ -1,5 +1,9 @@
 const transform = async () => {
-    // Write your code here 
+  process.stdin.on("readable", () => {
+    const chunk = process.stdin.read();
+
+    process.stdout.write(chunk.toString().split("").reverse().join(""));
+  });
 };
 
 await transform();
